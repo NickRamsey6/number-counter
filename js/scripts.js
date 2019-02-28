@@ -5,17 +5,19 @@
 // Finally, reverse the order of the new array, join it back together into a string, and display it to the user.
 
 $(document).ready(function() {
-  $('#sentence_form').submit(function(event){
-    var sentence = $('#sentence').val();
-    let array = sentence.split(' ');
+  $('#number_form').submit(function(event){
+    var number1 = parseInt($('#number1').val());
+    var number2 = parseInt($('#number2').val());
 
-    let array_new = array.map(function(word){
-      if(word.length > 3){return word;};
+    let array = [];
 
-    });
-    var resultArray = array_new.reverse();
-    const resultText = resultArray.join(' ');
+    // for (var index = 1; index <= number1/number2; index++) {
+    //   array.push(number2 * index);
+    // }
 
-    alert(resultText);
+    for (var index = number2; index <= number1; index += number2) {
+      array.push(index);
+    }
+    alert(array);
   });
 });
